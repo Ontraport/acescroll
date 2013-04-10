@@ -12,38 +12,41 @@ steal(
 	'./lib/jquery-mousewheel-3.0.5/jquery.mousewheel.js',
 	'./lib/jquery.jb.acescroll.js',
 	function(){
-	/*
-	 * setup the horz and vert plugins
-	 */
-	
-	/*
-	 * short cut for vertical 
-	 */
-	$.fn.acescrollv = function( position ){
-		return this.acescroll({
-			position: $.extend( {}, {
+		//veritcal
+		var vert = $.extend( true, $.jb.acescroll.prototype,{
+	      	name: 'jb-ace-scrollv',
+	      	widgetEventPrefix: 'acescrollv',
+	      	widgetName: 'acescrollv',
+	      });
+	  
+      vert.options.position ={
 				my: 'left top',
 				at: 'right top',
 				offset: '11 0',
 				collision: 'none'
-			}, position )
-		});
-	};
+			};
+      
+      $.widget('jb.acescrollv', vert )
+
+       //horizontal
+       
+       var hoz = $.extend( true, $.jb.acescroll.prototype,{
+	      	name: 'jb-ace-scrollh',
+	      	widgetEventPrefix: 'acescrollh',
+	      	widgetName: 'acescrollh',
+	      });
+
+      hoz.options.orientation= 'horizontal';
+      
+      hoz.options.position = {
+			my:'left bottom',
+	        at:'left bottom',
+	        offset:'0 20',
+	        collision:'none'
+		}
+      
+      $.widget('jb.acescrollh', hoz )
 	
-	/*
-	 * short cut for vertical horizontal
-	 */
-	$.fn.acescrollh = function( position ){
-		return this.acescroll({
-			orientation: 'horizontal',
-			position: $.extend( {}, {
-				my:'left bottom',
-                at:'left bottom',
-                offset:'0 20',
-                collision:'none'
-			}, position )
-		});
-	};
 	
 	
 	}

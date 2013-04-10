@@ -445,41 +445,57 @@
     	
     	
     	
-	/*
-	 * short cut for vertical 
-	 */
-	$.fn.acescrollv = function( position ){
-		return this.acescroll({
-			position: $.extend( {}, {
+
+	
+	  
+       var vert = $.extend( true, $.jb.acescroll.prototype,{
+      	name: 'jb-ace-scrollv',
+      	widgetEventPrefix: 'acescrollv',
+      	widgetName: 'acescrollv',
+      });
+
+
+      vert.options.position ={
 				my: 'left top',
 				at: 'right top',
 				offset: '11 0',
 				collision: 'none'
-			}, position )
-		});
-	};
+			};
+      
+      $.widget('jb.acescrollv', vert )
+	
+	
+	
 	
 	/*
 	 * short cut for vertical horizontal
 	 */
-	$.fn.acescrollh = function( position ){
-		return this.acescroll({
-			orientation: 'horizontal',
-			position: $.extend( {}, {
-				my:'left bottom',
-                at:'left bottom',
-                offset:'0 20',
-                collision:'none'
-			}, position )
-		});
-	};
-    	
-    	
+	//
+      
        $('.vert').acescrollv();
        
        // $('.noscroll').acescroll({
        		// minScrollBarWidth: 10
        // });
+       
+       
+       
+       var copy = $.extend( true, $.jb.acescroll.prototype,{
+      	name: 'jb-ace-scrollh',
+      	widgetEventPrefix: 'acescrollh',
+      	widgetName: 'acescrollh',
+      } );
+
+      copy.options.orientation= 'horizontal';
+      
+      copy.options.position = {
+		my:'left bottom',
+        at:'left bottom',
+        offset:'0 20',
+        collision:'none'
+	}
+      
+      $.widget('jb.acescrollh', copy )
        
        $('.content2').acescrollh();
        
