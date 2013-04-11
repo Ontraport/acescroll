@@ -9,10 +9,10 @@ steal(
 .then(
 	'./acescroll.css',
 	
-	'./lib/jquery-mousewheel-3.0.5/jquery.mousewheel.js',
+	'./lib/jquery-mousewheel/jquery.mousewheel.js',
 	'./lib/jquery.jb.acescroll.js',
 	function(){
-		//veritcal
+		//vertical
 		var vert = $.extend( true, $.jb.acescroll.prototype,{
 	      	name: 'jb-ace-scrollv',
 	      	widgetEventPrefix: 'acescrollv',
@@ -41,7 +41,7 @@ steal(
       hoz.options.position = {
 			my:'left bottom',
 	        at:'left bottom',
-	        offset:'0 20',
+	        offset:'0 15',
 	        collision:'none'
 		}
       
