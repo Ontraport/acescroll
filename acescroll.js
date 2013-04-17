@@ -16,7 +16,7 @@ steal(
 		var vert = $.extend( true, $.jb.acescroll.prototype,{
 	      	name: 'jb-ace-scrollv',
 	      	widgetEventPrefix: 'acescrollv',
-	      	widgetName: 'acescrollv',
+	      	widgetName: 'acescrollv'
 	      });
 	  
       vert.options.position ={
