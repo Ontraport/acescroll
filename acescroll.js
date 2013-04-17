@@ -33,7 +33,7 @@ steal(
        var hoz = $.extend( true, $.jb.acescroll.prototype,{
 	      	name: 'jb-ace-scrollh',
 	      	widgetEventPrefix: 'acescrollh',
-	      	widgetName: 'acescrollh',
+	      	widgetName: 'acescrollh'
 	      });
 
       hoz.options.orientation= 'horizontal';
